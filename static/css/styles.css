@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover,
+button:hover {
+    cursor: pointer;
+}
+
+tr > th,
+tr > td {
+    padding: 0 10px;
+}
+
+.container {
+    height: 80%;
+    width: 800px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.container h1{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px auto 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.stats > span {
+    padding: 10px 50px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.input-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    width: 100%
+}
+
+.input-form input{
+    width: 400px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+.container form button {
+    width: 200px;
+    height: 2rem;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.container form button:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.container table {
+    width: 100%;
+}
+
+.container table th {
+    border-bottom: 2px solid black;
+}
+
+.container table td {
+    text-align: center;
+    border-bottom: 2px dotted black;
+}
+
+.container table td:nth-of-type(2) {
+    text-align: left;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.container table td:nth-of-type(3),
+.container table th:nth-of-type(3) {
+    max-width: 80px;
+}
+
+.container table td:nth-of-type(4),
+.container table th:nth-of-type(4) {
+    max-width: 100px;
+}
+
+.update,
+.delete {
+    margin: 5px auto 5px;
+    border-radius: 20px;
+    padding: 5px 8px;
+    font-size: 0.83em;
+    font-weight: 600;
+}
+
+.update {
+    border: 2px solid green;
+    background-color: green;
+    color: white;
+}
+
+.delete {
+    border: 2px solid red;
+    background-color: red;
+    color: white;
+}
+
+.update:hover {
+    background-color: rgb(0,180,0);
+}
+
+.delete:hover {
+    background-color: rgba(255,0,0,0.5);
+}

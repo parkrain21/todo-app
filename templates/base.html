@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>To-do app</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo App</h1>
+
+        <form action="/add" method="POST">
+            <div class="input-form">
+                <label for="title"></label>
+                <input type="text", name="title", placeholder="Enter task here (e.g. Do dishes, etc.)">
+                <br>
+                <button type="submit">Create task</button>
+            </div>
+        </form>
+
+        <div class="stats">
+            <span class="stats-total">Total Tasks: <span>{{ total_todo }}</span></span>
+            <span class="stats-complete">Total Completed: <span>{{ total_completed }}</span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Descripton</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for todo in todo_list %}
+                <tr>
+                    <td>{{ todo["id"] }}</td>
+                    <td>{{ todo["title"] }}</td>
+
+                    <td>
+                        {% if todo.complete == False %}
+                            Not Completed
+                        {% else %}
+                            Completed
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        <a class="update" href="/update/{{ todo.id }}">Update</a>
+                        <a class="delete" href="/delete/{{ todo.id }}">Delete</a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+</body>
+</html>
